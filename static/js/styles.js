@@ -1,6 +1,7 @@
 $(function() {
    var availableTags = [
     "Ale",
+    "IPA",
 	"Altbier",
 	"American Adjunct Lager",
 	"American Amber / Red Ale",
