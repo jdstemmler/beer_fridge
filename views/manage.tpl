@@ -20,7 +20,7 @@
 
 	<nav class="navbar navbar-default">
 	  <div class="container-fluid">
-	    <!-- Brand and toggle get grouped for better mobile 
+	    <!-- Brand and toggle get grouped for better mobile
 	 -->
 	    <div class="navbar-header">
 	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav">
@@ -50,8 +50,8 @@
 	  </div><!-- /.container-fluid -->
 	</nav>
 
-<div class="container-fluid">	
-		
+<div class="container-fluid">
+
 <h2>All beers:</h2>
 <table class="table table-striped">
 	<tr>
@@ -61,21 +61,28 @@
 		<td><h4>Style</h4></td>
 		<td><h4>ABV</h4></td>
 		<td><h4>Size</h4></td>
-		<td><h4>Amount</h4></td>
+		<td><h4>#</h4></td>
 		<td><h4>Type</h4></td>
-		<td><h4>Remove</h4></td>
+		<td><h4>Restock</h4></td>
+		<td><h4>Delete</h4></td>
+	</tr>
 %for row in rows:
-<form action="/manage" method="POST">
+
     <tr>
     <!-- Grab beer id-->
-    %p_id = row[0] 
+    %p_id = row[0]
     %for col in row:
         <td>{{col}}</td>
     %end
 		<form action="/manage" method="POST">
-            <!-- input type hidden, and value is the ID of the beer -->
-            <input type = "hidden" name ="beer_id" value= "{{p_id}}">
-			<td><button type ="submit" name="del_beer" class="btn btn-danger">Delete</button></td>
+
+            <input type="hidden" name ="beer_id" value="{{ p_id }}">
+			<td>
+				<button type="submit" name="add" class="btn btn-primary">
+					<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+				</button>
+			</td>
+			<td><button type="submit" name="del_beer" class="btn btn-danger">Delete</button></td>
 		</form>
     </tr>
 %end
@@ -83,4 +90,3 @@
 </div>
 </body>
 </html>
-
