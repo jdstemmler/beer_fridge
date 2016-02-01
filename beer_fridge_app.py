@@ -18,7 +18,7 @@ def static(path):
 def display():
     conn = sqlite3.connect('beers.db') #connect
     c = conn.cursor()
-    c.execute("SELECT id, brewer, beer, amount FROM beer WHERE amount > 0;") #only want beers we have
+    c.execute("SELECT id, brewer, beer, amount FROM beer WHERE amount > 0 ORDER BY brewer;") #only want beers we have
     result = c.fetchall()
     c.close()
 

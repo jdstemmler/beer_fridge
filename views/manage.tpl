@@ -53,9 +53,8 @@
 <div class="container-fluid">
 
 <h2>All beers:</h2>
-<table class="table table-striped">
+<table class="table table-striped table-condensed">
 	<tr>
-		<td><h4>ID</h4></td>
 		<td><h4>Brewery</h4></td>
 		<td><h4>Name</h4></td>
 		<td><h4>Style</h4></td>
@@ -71,7 +70,7 @@
     <tr>
     <!-- Grab beer id-->
     %p_id = row[0]
-    %for col in row:
+    %for col in row[1:]:
         <td>{{col}}</td>
     %end
 		<form action="/manage" method="POST">

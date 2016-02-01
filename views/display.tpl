@@ -49,12 +49,12 @@
 	  </div><!-- /.container-fluid -->
 	</nav>
 
-<div class="container-fluid">	
-		
+<div class="container-fluid">
+
 <h2>The available beers are:</h2>
-<table class="table table-striped">
+<table class="table table-striped table-condensed">
 	<tr>
-		<td><h4>ID</h4></td>
+		
 		<td><h4>Brewery</h4></td>
 		<td><h4>Name</h4></td>
 		<td><h4>Amount</h4></td>
@@ -64,8 +64,8 @@
 %for row in rows:
     <tr>
     <!-- Grab beer id-->
-    %p_id = row[0] 
-    %for col in row:
+    %p_id = row[0]
+    %for col in row[1:]:
         <td>{{col}}</td>
     %end
         <form action="/display" method="POST">
@@ -81,4 +81,3 @@
 </div>
 </body>
 </html>
-
