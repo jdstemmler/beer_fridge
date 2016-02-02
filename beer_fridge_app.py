@@ -94,7 +94,7 @@ def new_beer():
 def manage():
         conn = sqlite3.connect('beers.db') #connect
         c = conn.cursor()
-        c.execute("SELECT id, brewer, beer, style, abv, size, amount, vtype FROM beer;") #get all beers
+        c.execute("SELECT id, brewer, beer, style, abv, size, amount, vtype FROM beer ORDER BY brewer;") #get all beers
         result = c.fetchall()
         c.close()
 
