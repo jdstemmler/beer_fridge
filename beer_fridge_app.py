@@ -135,4 +135,14 @@ def stats():
     output = template('stats', volume=volume, vessels=vessels, bottles = bottles, cans = cans)
     return output
 
-run(app, host='0.0.0.0', port=8080, debug=True)
+if __name__ == "__main__":
+    port = 8080
+    debug = False
+
+    if '--debug' in sys.argv:
+        debug = True
+
+    if '--80' in sys.argv:
+        port = 80
+
+    run(app, host='0.0.0.0', port=port, debug=debug)
